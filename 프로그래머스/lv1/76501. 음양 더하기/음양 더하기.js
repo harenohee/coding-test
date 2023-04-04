@@ -1,6 +1,4 @@
 function solution(absolutes, signs) {
-  const result = absolutes.map((ele, idx)=>{
-     return signs[idx] ? ele : -(ele)
-  }).reduce((acc, cur)=> acc+cur);
+  const result = absolutes.reduce((acc, cur, idx)=> acc + (signs[idx] ? cur: -cur),0)
   return result;
 }
